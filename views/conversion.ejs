@@ -1,0 +1,54 @@
+<% include partials/header %>
+    	<nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                </div>
+                <div class="nav navbar-nav navbar-left">
+                    <a href="#"><img src="https://cdn.worldvectorlogo.com/logos/forex-1.svg" width="82" height="60" title="Forex System" id="home_link"></a>
+                </div>
+                <div class="nav navbar-nav navbar-default">
+                    <p id="home_title">FOREX SYSTEM</p>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-nav-demo">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="login"><a href="/login.ejs" title="login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container" id="form_container">
+                <form action="/convert" method="POST">
+                        <h3>Exchange Rate Calculator</h3>
+                        <div name="fromcurr" id="fromcurr" class="form-group">
+                          <label  for="from">From:</label>
+                          <select name="from" id="from">
+                                <option  value="" disabled selected><%= FromCurr %></option>
+                                <option >Rupees</option>
+                                <option >Dollar</option>
+                          </select>
+                          <label for="from_value">Value:</label>
+                          <input type="number" name = "val" id="from_value" placeholder="<%= InputVal %>" required>
+                        </div>
+                        <div name="tocurr" id ="tocurr" class="form-group">
+                                <label name  = "to" for="to">To:</label>
+                                <select name="to" id="to">
+                                      <option value="" disabled selected><%= ToCurr %></option>
+                                      <option>Rupees</option>
+                                      <option>Dollar</option>
+                                </select>
+                                <label for="to_value">Value:</label>
+                                <input  type="number" id="to_value" placeholder="<%= convertedVal %>"">
+                        </div>
+                        <div class="text-center"> 
+                        <button type="submit" class="btn btn-primary">Convert</button>
+                        </div>
+                </form>
+        </div>
+
+<% include partials/footer %>
